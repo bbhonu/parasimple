@@ -1,3 +1,39 @@
 body {
 	background-color: yellow;
 }
+
+h2 {
+	font-size: 2em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	}
+
+/*turns 2d screen into parallax w perspective */
+
+.parallax /*note: don't put this class on the body, it doesn't work- use div*/{
+perspective: 1px;
+height:100vh; /*vh is vertical height*/
+overflow-x: hidden;
+overflow-y: auto;
+}
+
+.parallax-layer {
+	position: absolute; /*takes this layer out of the flow- acts like photoshop layers*/
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 100vh 0; /*add some padding to force scroll bars*/
+}
+
+.parallax-fore {
+/*	transform: translateZ(0);
+*/	transform: translateZ(-1px) scale(2);
+}
+
+.parallax-back {
+/*	transform: translateZ(-1px);
+*/	transform: translateZ(-2px) scale(3);
+}
